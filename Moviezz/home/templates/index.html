@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script>
+        function handleSearch(event) {
+            event.preventDefault();
+            var query = document.getElementById('search_input').value;
+            if (query) {window.location.href = '/search_results/?query=' + encodeURIComponent(query);}
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Welcome to Home Page<br></h1>
+    <a class="btn btn-primary" href="/django_unchained_details" role="button">Click to view Django Unchained Details</a>
+    
+    <p><br><br>Search more Movies:<br></p>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex" role="search" onsubmit="handleSearch(event)">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search_input">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    
+
+</body>
+</html>
